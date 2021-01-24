@@ -6,8 +6,11 @@ function rot13(str) {
         
         let letter = str.charCodeAt(index); // convert the English character to ASCII.
 
-        // if the letter ASCII code is from 65 to 90 (ie within capital A - Z), add 13 to the ASCII code of that letter
-        if (!(letter < 65 || letter > 90)) {
+        // if the letter ASCII code is not within 65 and 90 (inclusive) 
+        if ((letter < 65 || letter > 90)) {
+            //return "Your input should be in all CAPs and from A - Z. Please try again"
+            
+        } else { // if the letter ASCII code is within 65 to 90 (ie within capital A - Z), add 13 to the ASCII code of that letter
             letter += 13; 
 
             // and if the code is bigger than 90, substract 90 from it and add 64 to it.
@@ -15,15 +18,12 @@ function rot13(str) {
             if (letter > 90) {
                 letter = (letter - 90) + 64;
             }
-        } else { // the letter is not within range return it like that
-            letter = letter;
         }
 
         newStr += String.fromCharCode(letter) // convert ASCII to English character
         
     }
-
-    console.log(newStr);
+    
     return newStr;
   }
   
