@@ -8,8 +8,7 @@ function rot13(str) {
 
         // if the letter ASCII code is not within 65 and 90 (inclusive) 
         if ((letter < 65 || letter > 90)) {
-            //return "Your input should be in all CAPs and from A - Z. Please try again"
-            
+            letter = letter            
         } else { // if the letter ASCII code is within 65 to 90 (ie within capital A - Z), add 13 to the ASCII code of that letter
             letter += 13; 
 
